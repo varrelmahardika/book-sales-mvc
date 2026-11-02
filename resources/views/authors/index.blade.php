@@ -11,10 +11,10 @@
         <tbody>
             @foreach ($authors as $author)
                 <tr>
-                    <td>{{ $author['id'] }}</td>
-                    <td>{{ $author['name'] }}</td>
-                    <td>{{ $author['photo'] }}</td>
-                    <td>{{ $author['bio'] }}</td>
+                    <td>{{ $author->id }}</td>
+                    <td>{{ $author->name }}</td>
+                    <td>{{ $author->photo }}</td>
+                    <td>{{ $author->bio }}</td>
                 </tr>
             @endforeach
         </tbody>

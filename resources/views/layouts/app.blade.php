@@ -13,8 +13,9 @@
 </head>
 <body>
     <nav>
-        <a href="/genres">Genre</a>
+        <a href="/books">Book</a>
         <a href="/authors">Author</a>
+        <a href="/genres">Genre</a>
     </nav>
     @yield('content')
 </body>
