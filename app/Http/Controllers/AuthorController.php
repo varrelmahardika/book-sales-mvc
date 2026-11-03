@@ -9,6 +9,11 @@ class AuthorController extends Controller
     public function index()
     {
         $authors = Author::all();
-        return view('authors.index', compact('authors'));
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Daftar data author',
+            'data'    => $authors,
+        ]);
     }
 }
