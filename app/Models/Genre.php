@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-class Genre
+use Illuminate\Database\Eloquent\Model;
+
+class Genre extends Model
 {
-    public static function all()
+    public $timestamps = false;
+
+    protected $fillable = ['name', 'description'];
+
+    public function books()
     {
-        return [
-            ['id' => 1, 'name' => 'Fiksi',     'description' => 'Cerita rekaan seperti novel dan cerpen.'],
-            ['id' => 2, 'name' => 'Non-Fiksi', 'description' => 'Buku berbasis fakta dan pengetahuan nyata.'],
-            ['id' => 3, 'name' => 'Teknologi', 'description' => 'Buku seputar pemrograman dan teknologi.'],
-            ['id' => 4, 'name' => 'Sejarah',   'description' => 'Buku tentang peristiwa dan tokoh masa lalu.'],
-            ['id' => 5, 'name' => 'Biografi',  'description' => 'Kisah hidup seorang tokoh.'],
-        ];
+        return $this->hasMany(Book::class);
     }
 }
